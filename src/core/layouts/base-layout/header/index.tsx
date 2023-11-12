@@ -1,16 +1,23 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
 import { Dialog, Popover } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useTheme } from 'next-themes'
 
+import { ThemeSwitch } from '@core/components'
 import { Urls } from '@core/constants'
 
 import styles from './styles.module.css'
-import Link from 'next/link'
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const { theme } = useTheme()
+
+  useEffect(() => {
+    console.log('theme changes', theme)
+  }, [theme])
 
   return (
     <header className={styles.header}>
@@ -22,6 +29,7 @@ export default function Header() {
               className="h-12 w-auto"
               width={40}
               height={40}
+              priority
               src="/logo.png"
               alt=""
             />
@@ -62,9 +70,6 @@ export default function Header() {
           >
             Blog
           </Link>
-          <Link href="/about" className={styles.link}>
-            About
-          </Link>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Link
@@ -75,6 +80,8 @@ export default function Header() {
           >
             GitHub
           </Link>
+
+          <ThemeSwitch className="ml-2" />
         </div>
       </nav>
       <Dialog
@@ -94,6 +101,7 @@ export default function Header() {
               <span className="sr-only">Frontend Garage</span>
               <Image
                 className="h-12 w-auto"
+                priority
                 width={40}
                 height={40}
                 src="/logo.png"
@@ -137,14 +145,6 @@ export default function Header() {
                 >
                   Blog
                 </Link>
-
-                <Link
-                  href="/about"
-                  className={styles.mobileLink}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  About
-                </Link>
               </div>
               <div className="py-6">
                 <Link
@@ -155,6 +155,8 @@ export default function Header() {
                 >
                   GitHub
                 </Link>
+
+                <ThemeSwitch className={styles.mobileLink} />
               </div>
             </div>
           </div>

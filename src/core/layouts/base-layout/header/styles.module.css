@@ -11,7 +11,7 @@
 }
 
 .link {
-  @apply text-sm font-semibold leading-6 text-white;
+  @apply text-sm font-semibold leading-6 text-gray-700;
 }
 
 .mobileLink {
@@ -30,7 +30,7 @@
   @apply -my-6 divide-y divide-gray-500/10;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (color-scheme: dark) {
   .header {
     @apply bg-black text-white;
   }
