@@ -7,7 +7,6 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'Frontend Garage',
   description: "Frontend Garage's website",
-  favicon: '/logo.png',
 }
 
 export default function RootLayout({
