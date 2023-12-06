@@ -14,12 +14,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <ThemeProvider>
-        <body className={inter.className}>
+      <body className={inter.className}>
+        <ThemeProvider>
           <Header />
           <main>{children} </main>
-        </body>
-      </ThemeProvider>
+        </ThemeProvider>
+      </body>
     </html>
   )
 }
