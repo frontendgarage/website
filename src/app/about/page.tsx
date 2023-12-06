@@ -1,3 +1,1 @@
-import About from '@features/about'
-
-export default About
+export { default } from '@features/about'
