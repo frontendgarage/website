@@ -1,3 +1,1 @@
-import Home from '@features/home'
-
-export default Home
+export { default } from '@features/home'

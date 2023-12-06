@@ -1,24 +1,17 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Dialog, Popover } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { useTheme } from 'next-themes'
 
-import { ThemeSwitch } from '@core/components'
+import { Dialog, Popover } from '@core/components'
 import { Urls } from '@core/constants'
 
+import ThemeSwitch from './theme-switch'
 import styles from './styles.module.css'
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const { theme } = useTheme()
-
-  useEffect(() => {
-    console.log('theme changes', theme)
-  }, [theme])
-
   return (
     <header className={styles.header}>
       <nav className={styles.nav} aria-label="Global">
