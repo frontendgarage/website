@@ -6,7 +6,7 @@ import { useTheme } from 'next-themes'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import classnames from 'classnames'
 
-import { Dialog, Popover } from '@core/components'
+import { Dialog, Divider, Popover } from '@core/components'
 import { Urls } from '@core/constants'
 
 import ThemeSwitch from './theme-switch'
@@ -164,7 +164,7 @@ export default function Header() {
           </div>
         </Dialog.Panel>
       </Dialog>
-      <hr className="border-gray-200 dark:border-gray-800" />
+      <Divider />
     </header>
   )
 }
