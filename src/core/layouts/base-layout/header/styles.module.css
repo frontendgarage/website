@@ -1,56 +1,35 @@
-.header {
-  @apply bg-white;
-}
-
 .nav {
   @apply mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8;
 }
 
 .burgerMenu {
-  @apply -m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700;
+  @apply -m-2.5 inline-flex items-center justify-center rounded-md p-2.5;
 }
 
 .link {
-  @apply text-sm font-semibold leading-6 text-gray-700;
+  @apply text-sm font-semibold leading-6;
 }
 
 .mobileLink {
-  @apply -mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50;
+  @apply -mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7;
 }
 
 .dialog {
-  @apply fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10;
+  @apply lg:hidden;
+}
+
+.panel {
+  @apply fixed inset-y-0 right-0 z-10 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 bg-white;
+}
+
+.panelDark {
+  @apply bg-[#14151B];
 }
 
 .closeButton {
-  @apply -m-2.5 rounded-md p-2.5 text-gray-700;
+  @apply -m-2.5 rounded-md p-2.5;
 }
 
 .divider {
   @apply -my-6 divide-y divide-gray-500/10;
-}
-
-@media (color-scheme: dark) {
-  .header {
-    @apply bg-black text-white;
-  }
-
-  .closeButton,
-  .burgerMenu,
-  .link,
-  .mobileLink {
-    @apply text-white;
-  }
-
-  .mobileLink {
-    @apply hover:bg-black;
-  }
-
-  .dialog {
-    @apply bg-black sm:ring-white;
-  }
-
-  .divider {
-    @apply divide-white;
-  }
 }
