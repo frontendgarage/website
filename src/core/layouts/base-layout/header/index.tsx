@@ -3,17 +3,21 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import classnames from 'classnames'
 
 import { Dialog, Popover } from '@core/components'
 import { Urls } from '@core/constants'
 
 import ThemeSwitch from './theme-switch'
 import styles from './styles.module.css'
+import { useTheme } from 'next-themes'
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const { theme } = useTheme()
+
   return (
-    <header className={styles.header}>
+    <header>
       <nav className={styles.nav} aria-label="Global">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
@@ -79,12 +83,17 @@ export default function Header() {
       </nav>
       <Dialog
         as="div"
-        className="lg:hidden"
+        className={styles.dialog}
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
       >
         <div className="fixed inset-0 z-10" />
-        <Dialog.Panel className={styles.dialog}>
+        <Dialog.Panel
+          className={classnames(
+            styles.panel,
+            theme === 'dark' && styles.panelDark,
+          )}
+        >
           <div className="flex items-center justify-between">
             <Link
               href="/"
@@ -149,12 +158,13 @@ export default function Header() {
                   GitHub
                 </Link>
 
-                <ThemeSwitch className={styles.mobileLink} />
+                <ThemeSwitch />
               </div>
             </div>
           </div>
         </Dialog.Panel>
       </Dialog>
+      <hr className="border-gray-200 dark:border-gray-800" />
     </header>
   )
 }
