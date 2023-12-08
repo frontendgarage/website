@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useTheme } from 'next-themes'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import classnames from 'classnames'
 
@@ -10,7 +11,6 @@ import { Urls } from '@core/constants'
 
 import ThemeSwitch from './theme-switch'
 import styles from './styles.module.css'
-import { useTheme } from 'next-themes'
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
