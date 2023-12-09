@@ -19,8 +19,8 @@ export default function Header() {
   return (
     <header>
       <nav className={styles.nav} aria-label="Global">
-        <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5">
+        <div className="flex lg:flex-1 hvr-grow">
+          <Link href="/" className={classnames(styles.grow)}>
             <span className="sr-only">Frontend Garage</span>
             <Image
               className="h-12 w-auto"
