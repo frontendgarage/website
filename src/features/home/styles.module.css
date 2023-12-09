@@ -1,0 +1,7 @@
+.container {
+  @apply w-full h-96 flex items-center justify-center m-auto px-8;
+}
+
+.heading {
+  @apply text-2xl font-semibold lg:text-6xl;
+}

@@ -33,3 +33,12 @@
 .divider {
   @apply -my-6 divide-y divide-gray-500/10;
 }
+
+.grow {
+  @apply lg:transform  duration-300;
+}
+.grow:hover,
+.grow:focus,
+.grow:active {
+  @apply lg:scale-110;
+}
