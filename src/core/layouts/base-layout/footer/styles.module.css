@@ -1,0 +1,7 @@
+.container {
+  @apply absolute bottom-8 mx-0 w-full grid place-items-center;
+}
+
+.copyright {
+  @apply text-xs;
+}
