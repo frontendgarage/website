@@ -1,7 +1,11 @@
 .container {
-  @apply w-full h-96 flex items-center justify-center m-auto px-8;
+  @apply w-full h-96 flex flex-col items-center justify-center pt-24 px-8;
 }
 
 .heading {
   @apply text-2xl font-semibold lg:text-6xl;
+}
+
+.subscribe {
+  @apply flex flex-col;
 }
