@@ -3,10 +3,10 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useTheme } from 'next-themes'
+import { Popover, Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import classnames from 'classnames'
 
-import { Dialog, Divider, Popover } from '@core/components'
 import { Urls } from '@core/constants'
 
 import styles from './styles.module.css'
@@ -172,7 +172,7 @@ export default function Header() {
           </div>
         </Dialog.Panel>
       </Dialog>
-      <Divider />
+      <hr className="border-gray-200 dark:border-gray-800" />
     </header>
   )
 }
