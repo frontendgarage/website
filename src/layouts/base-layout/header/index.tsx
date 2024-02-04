@@ -7,7 +7,7 @@ import { Popover, Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import classnames from 'classnames'
 
-import { Urls } from '@core/constants'
+import { WIKI, NEWSLETTER, BLOG, GITHUB } from './constants'
 
 import styles from './styles.module.css'
 import { ThemeSelect, ThemeToggle } from './theme'
@@ -46,13 +46,13 @@ export default function Header() {
           <Link
             target="_blank"
             rel="noopener"
-            href={Urls.WIKI}
+            href={WIKI}
             className={styles.link}
           >
             Wiki
           </Link>
           <Link
-            href={Urls.NEWSLETTER}
+            href={NEWSLETTER}
             target="_blank"
             rel="noopener"
             className={styles.link}
@@ -62,7 +62,7 @@ export default function Header() {
           <Link
             target="_blank"
             rel="noopener"
-            href={Urls.BLOG}
+            href={BLOG}
             className={styles.link}
           >
             Blog
@@ -74,7 +74,7 @@ export default function Header() {
           <Link
             target="_blank"
             rel="noopener"
-            href={Urls.GITHUB}
+            href={GITHUB}
             className={styles.link}
           >
             <span className="sr-only">Frontend Garage on GitHub</span>
@@ -133,7 +133,7 @@ export default function Header() {
                 <Link
                   target="_blank"
                   rel="noopener"
-                  href={Urls.WIKI}
+                  href={WIKI}
                   className={styles.mobileLink}
                 >
                   Wiki
@@ -141,7 +141,7 @@ export default function Header() {
                 <Link
                   target="_blank"
                   rel="noopener"
-                  href={Urls.NEWSLETTER}
+                  href={NEWSLETTER}
                   className={styles.mobileLink}
                 >
                   Newsletter
@@ -150,7 +150,7 @@ export default function Header() {
                 <Link
                   target="_blank"
                   rel="noopener"
-                  href={Urls.BLOG}
+                  href={BLOG}
                   className={styles.mobileLink}
                 >
                   Blog
@@ -160,7 +160,7 @@ export default function Header() {
                 <Link
                   target="_blank"
                   rel="noopener"
-                  href={Urls.GITHUB}
+                  href={GITHUB}
                   className={styles.mobileLink}
                 >
                   GitHub

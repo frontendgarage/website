@@ -19,8 +19,7 @@
       }
     ],
     "paths": {
-      "@core/*": ["./src/core/*"],
-      "@features/*": ["./src/features/*"]
+      "src/*": ["./src/*"]
     }
   },
   "include": [

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-import { BaseLayout } from '@core/layouts'
+import { BaseLayout } from '../layouts'
 
 import './globals.css'
 

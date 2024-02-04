@@ -1,7 +1,7 @@
 'use client'
 import { Inter } from 'next/font/google'
 
-import { ThemeProvider } from '@core/providers'
+import { ThemeProvider } from 'src/providers'
 
 import Header from './header'
 import Footer from './footer'
