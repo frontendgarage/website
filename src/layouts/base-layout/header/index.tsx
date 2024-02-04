@@ -9,7 +9,6 @@ import classnames from 'classnames'
 
 import { WIKI, NEWSLETTER, BLOG, GITHUB } from './constants'
 
-import styles from './styles.module.css'
 import { ThemeSelect, ThemeToggle } from './theme'
 
 export default function Header() {
@@ -18,9 +17,15 @@ export default function Header() {
 
   return (
     <header>
-      <nav className={styles.nav} aria-label="Global">
+      <nav
+        className="mx-auto flex max-w-7xl items-center justify-between p-2 lg:px-8"
+        aria-label="Global"
+      >
         <div className="flex lg:flex-1 hvr-grow">
-          <Link href="/" className={classnames(styles.grow)}>
+          <Link
+            href="/"
+            className="lg:transform  duration-300 hover:lg:scale-110"
+          >
             <span className="sr-only">Frontend Garage</span>
             <Image
               className="h-12 w-auto"
@@ -35,7 +40,7 @@ export default function Header() {
         <div className="flex lg:hidden">
           <button
             type="button"
-            className={styles.burgerMenu}
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5"
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
@@ -43,40 +48,25 @@ export default function Header() {
           </button>
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
-          <Link
-            target="_blank"
-            rel="noopener"
-            href={WIKI}
-            className={styles.link}
-          >
+          <Link target="_blank" rel="noopener" href={WIKI} className="link">
             Wiki
           </Link>
           <Link
             href={NEWSLETTER}
             target="_blank"
             rel="noopener"
-            className={styles.link}
+            className="link"
           >
             Newsletter
           </Link>
-          <Link
-            target="_blank"
-            rel="noopener"
-            href={BLOG}
-            className={styles.link}
-          >
+          <Link target="_blank" rel="noopener" href={BLOG} className="link">
             Blog
           </Link>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center">
           <ThemeToggle panelClassName="mt-8" />
 
-          <Link
-            target="_blank"
-            rel="noopener"
-            href={GITHUB}
-            className={styles.link}
-          >
+          <Link target="_blank" rel="noopener" href={GITHUB} className="link">
             <span className="sr-only">Frontend Garage on GitHub</span>
             <svg
               viewBox="0 0 16 16"
@@ -91,15 +81,15 @@ export default function Header() {
       </nav>
       <Dialog
         as="div"
-        className={styles.dialog}
+        className="lg:hidden"
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
       >
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel
           className={classnames(
-            styles.panel,
-            theme === 'dark' && styles.panelDark,
+            'fixed inset-y-0 right-0 z-10 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 bg-white',
+            theme === 'dark' && 'bg-[#14151B]',
           )}
         >
           <div className="flex items-center justify-between">
@@ -120,7 +110,7 @@ export default function Header() {
             </Link>
             <button
               type="button"
-              className={styles.closeButton}
+              className="-m-2.5 rounded-md p-2.5"
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className="sr-only">Close menu</span>
@@ -128,13 +118,13 @@ export default function Header() {
             </button>
           </div>
           <div className="mt-6 flow-root">
-            <div className={styles.divider}>
+            <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 <Link
                   target="_blank"
                   rel="noopener"
                   href={WIKI}
-                  className={styles.mobileLink}
+                  className="mobileLink"
                 >
                   Wiki
                 </Link>
@@ -142,7 +132,7 @@ export default function Header() {
                   target="_blank"
                   rel="noopener"
                   href={NEWSLETTER}
-                  className={styles.mobileLink}
+                  className="mobileLink"
                 >
                   Newsletter
                 </Link>
@@ -151,7 +141,7 @@ export default function Header() {
                   target="_blank"
                   rel="noopener"
                   href={BLOG}
-                  className={styles.mobileLink}
+                  className="mobileLink"
                 >
                   Blog
                 </Link>
@@ -161,7 +151,7 @@ export default function Header() {
                   target="_blank"
                   rel="noopener"
                   href={GITHUB}
-                  className={styles.mobileLink}
+                  className="mobileLink"
                 >
                   GitHub
                 </Link>

@@ -7,4 +7,11 @@
     @apply text-gray-800 bg-white;
     @apply dark:text-gray-300 dark:bg-[#14151B];
   }
+  .link {
+    @apply ml-6 block;
+  }
+
+  .mobileLink {
+    @apply -mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7;
+  }
 }
